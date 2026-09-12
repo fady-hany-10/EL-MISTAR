@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 28px;
+    padding: 35px 25px;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* تكبير اللوجو الرئيسي */
+.logo-container {
+    margin-bottom: 12px;
+}
+
+.logo-container img {
+    width: 130px !important;
+    height: 130px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    color: #ffffff !important;
+}
+
+.link-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.link-btn i {
+    font-size: 20px;
+    width: 25px;
+    text-align: left;
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* ألوان الأزرار */
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.btn-facebook {
+    background-color: #1877F2;
+}
+
+.btn-tiktok {
+    background-color: #000000;
+}
+
+/* لون زر InstaPay */
+.btn-instapay {
+    background-color: #582583 !important;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #555;
+    font-weight: 500;
+}
