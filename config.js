@@ -1,10 +1,7 @@
 const config = {
-    // Brand Identification
     brandName: "EL MISTAR",
-    tagline: "Elevating your everyday look. Welcome.", // أو "Where traditional craftsmanship meets modern style."
-    logo: "assets/logo (7).png", // يمكنك تعديل مسار اللوجو لاحقاً
-    
-    // Social Links & Integrations
+    tagline: "Elevating your everyday look. Welcome.",
+    logo: "assets/logo (7).png", 
     socialLinks: [
         {
             name: "Instagram",
@@ -31,7 +28,5 @@ const config = {
             bgGradient: "#5b2d82"
         }
     ],
-
-    // Footer
     footerText: "Powered by Vodoo"
 };
