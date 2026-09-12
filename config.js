@@ -1,7 +1,7 @@
 const config = {
     brandName: "EL MISTAR",
     tagline: "Elevating your everyday look. Welcome.",
-    logo: "assets/logo (7).png", 
+    logo: "logo (7).png", 
     socialLinks: [
         {
             name: "Instagram",
