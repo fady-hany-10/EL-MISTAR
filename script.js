@@ -1,33 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof config === "undefined") return;
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof config !== "undefined") {
+        // تعبئة البيانات الأساسية لو وجدت عناصر لها
+        const titleEl = document.getElementById("title");
+        if (titleEl) titleEl.textContent = config.brandName;
 
-    // تحديث النصوص والصورة
-    const logoEl = document.getElementById("logo");
-    if (logoEl && config.logo) logoEl.src = config.logo;
+        const subtitleEl = document.getElementById("subtitle");
+        if (subtitleEl) subtitleEl.textContent = config.tagline;
 
-    const titleEl = document.getElementById("title");
-    if (titleEl && config.title) titleEl.textContent = config.title;
+        const logoEl = document.getElementById("logo");
+        if (logoEl && config.logo) logoEl.src = config.logo;
 
-    const subtitleEl = document.getElementById("subtitle");
-    if (subtitleEl && config.subtitle) subtitleEl.textContent = config.subtitle;
+        // تعبئة الأزرار والروابط ديناميكياً
+        const linksContainer = document.getElementById("links-container");
+        if (linksContainer && config.socialLinks) {
+            linksContainer.innerHTML = ""; // تفريغ الحاوية أولاً
+            
+            config.socialLinks.forEach(link => {
+                const a = document.createElement("a");
+                a.href = link.url;
+                a.className = "link-btn"; // الفئة المعتادة للأزرار
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
 
-    // إنشاء الأزرار والروابط ديناميكياً
-    const container = document.getElementById("links-container");
-    if (container && config.links) {
-        container.innerHTML = "";
-        config.links.forEach(link => {
-            const a = document.createElement("a");
-            a.href = link.url;
-            a.target = "_blank";
-            a.rel = "noopener noreferrer";
-            a.className = `link-btn ${link.class}`;
+                // تطبيق التدرج اللوني أو اللون الخاص بالزر
+                if (link.bgGradient) {
+                    a.style.background = link.bgGradient;
+                }
 
-            a.innerHTML = `
-                <i class="${link.icon}"></i>
-                <span class="btn-text">${link.name}</span>
-            `;
+                // محتوى الزر (أيقونة + اسم)
+                a.innerHTML = `
+                    <i class="${link.icon}"></i>
+                    <span>${link.name}</span>
+                `;
 
-            container.appendChild(a);
-        });
+                linksContainer.appendChild(a);
+            });
+        }
     }
 });
